@@ -16,11 +16,12 @@ describe('Metrics', function () {
   })
 
   describe('#getAll', function () {
-    it('should get empty array on non existing group', function () {
+    it('should get empty array on non existing group', function (done) {
       dbMet.getAll( function (err: Error | null, result?: Metric[]) {
         expect(err).to.be.null
         expect(result).to.not.be.undefined
         expect(result).to.be.empty
+        done()
       })
     })
   })
